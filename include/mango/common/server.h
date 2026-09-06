@@ -18,11 +18,11 @@ enum {
 	LyrBottom,
 	LyrTile,
 	LyrMaximize,
-	LyrTop,
+	// special workspace layers: dim at the bottom, then tiled / maximized
 	LyrSpecialDim,
 	LyrSpecialTile,
 	LyrSpecialMaximize,
-	LyrSpecialTop,
+	LyrTop,
 	LyrFadeOut,
 	LyrOverlay,
 	LyrIMPopup,

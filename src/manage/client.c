@@ -3575,9 +3575,10 @@ uint32_t client_target_layer(Client *c) {
 							c->is_scratchpad_show && !c->isminimized);
 
 	if (special_overlay)
-		return c->isfloating || c->isfullscreen ? LyrSpecialTop
-			   : c->ismaximizescreen			? LyrSpecialMaximize
-												: LyrSpecialTile;
+		return c->ismaximizescreen ? LyrSpecialMaximize : LyrSpecialTile;
+
+	if (is_special_active(c->mon))
+		return c->ismaximizescreen ? LyrMaximize : LyrTile;
 
 	return c->isfloating || c->isfullscreen ? LyrTop
 		   : c->ismaximizescreen			? LyrMaximize
